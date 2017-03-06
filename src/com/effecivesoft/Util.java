@@ -1,13 +1,18 @@
 package com.effecivesoft;
 
+import com.effecivesoft.model.Move;
+
 /**
  * Created by andrei.tihomirov on 03.03.2017.
  */
-public class InvalidMoveUtil {
+public class Util {
 
-    private InvalidMoveUtil() {}
+    private Util() {}
 
-    public static boolean isInvalidMove(char[] symbols, int[] numbers) {
+    public static boolean isValidMove(Move move) {
+        char[] symbols = {move.getStartPoint().getSymbol(), move.getEndPoint().getSymbol()};
+        int[] numbers = {move.getStartPoint().getNumber(), move.getEndPoint().getNumber()};
+
         boolean isOutsideChessboard = isOutsideChessboard(symbols, numbers);
         if(!isOutsideChessboard) {
             return false;
