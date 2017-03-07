@@ -7,6 +7,11 @@ import com.effecivesoft.model.Move;
  */
 public class Util {
 
+    public static final char MIN_CHESSBOARD_SYMBOL = 'A';
+    public static final char MAX_CHESSBOARD_SYMBOL = 'H';
+    public static final int MIN_CHESSBOARD_NUMBER = 1;
+    public static final int MAX_CHESSBOARD_NUMBER = 8;
+
     private Util() {}
 
     public static boolean isValidMove(Move move) {
@@ -48,7 +53,7 @@ public class Util {
 
     private static boolean isNumbersChessboard(int[] numbers) {
         for(int i = 0; i < numbers.length; i++) {
-            if((numbers[i] < 1) || (numbers[i] > 8)) {
+            if((numbers[i] < MIN_CHESSBOARD_NUMBER) || (numbers[i] > MAX_CHESSBOARD_NUMBER)) {
                 return false;
             }
         }
@@ -57,7 +62,7 @@ public class Util {
 
     private static boolean isSymbolsChessboard(char[] symbols) {
         for(int i = 0; i < symbols.length; i++) {
-            if((symbols[i] < 'A') || (symbols[i] > 'H')) {
+            if((symbols[i] < MIN_CHESSBOARD_SYMBOL) || (symbols[i] > MAX_CHESSBOARD_SYMBOL)) {
                 return false;
             }
         }
